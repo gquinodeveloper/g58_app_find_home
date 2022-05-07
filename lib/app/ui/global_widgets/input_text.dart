@@ -15,11 +15,13 @@ class InputText extends StatelessWidget {
     this.focusedBorderColor,
     this.validator,
     this.keyboardType = TextInputType.text,
+    this.textCapitalization = TextCapitalization.none,
     this.obscureText = false,
     this.suffixIcon,
     this.hintText,
     this.minLines = 1,
     this.maxLines,
+    this.maxLength,
     this.border,
     this.onChanged,
     this.onTap,
@@ -29,6 +31,7 @@ class InputText extends StatelessWidget {
   final String? initialValue;
   final bool? readOnly;
   final TextEditingController? controller;
+  final TextCapitalization textCapitalization;
   final IconData? iconPrefix;
   final Color? iconColor;
   final String? labelText;
@@ -44,6 +47,7 @@ class InputText extends StatelessWidget {
   final String? hintText;
   final int? minLines;
   final int? maxLines;
+  final int? maxLength;
   final InputBorder? border;
   final void Function(String)? onChanged;
   final void Function()? onTap;
@@ -53,7 +57,9 @@ class InputText extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       textInputAction: TextInputAction.done,
+      textCapitalization: textCapitalization,
       initialValue: initialValue,
+      maxLength: maxLength,
       style: TextStyle(color: fontColor, fontSize: fontSize),
       decoration: InputDecoration(
         border: border,

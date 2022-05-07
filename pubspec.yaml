@@ -38,7 +38,8 @@ dependencies:
   get: ^4.6.1
   flutter_svg: ^1.0.3
   flutter_screenutil: ^5.4.0+1
-  
+  flutter_secure_storage: ^5.0.2
+  card_swiper: ^2.0.3
 
 dev_dependencies:
   flutter_test:
